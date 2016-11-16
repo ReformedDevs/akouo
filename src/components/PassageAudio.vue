@@ -8,21 +8,21 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       player: null
     }
   },
   props: ["src"],
-  updated () {
+  updated() {
     const audio = document.getElementById("audio")
     audio.load()
   },
-  created () {
-    window.onkeydown = function (e) {
+  created() {
+    window.onkeydown = function(e) {
       return !(e.keyCode === 32 && e.target.tagName !== "INPUT")
     }
-    window.onkeyup = function (e) {
+    window.onkeyup = function(e) {
       if (e.keyCode === 32 && e.target.tagName !== "INPUT") {
         this.audio.paused ? this.audio.play() : this.audio.pause()
       }

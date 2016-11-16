@@ -12,13 +12,15 @@
 
 <script>
 import $ from "jquery"
+import { parsePassage } from "./utils/abbreviation.js"
 import PassageText from "./components/PassageText.vue"
 import PassageAudio from "./components/PassageAudio.vue"
 
 export default {
-  data () {
+  data() {
     return {
       passage: "",
+      parsedPassage: "",
       audioSrc: null,
       loading: true,
       passageHtml: ""
@@ -29,15 +31,19 @@ export default {
     passageAudio: PassageAudio
   },
   methods: {
-    getPassage () {
+    getPassage() {
       this.loadingText = true
 
-      var audioSrc = this.passage ? `http://audio.esvbible.org/hw/hq/${this.passage}.mp3` : null
-      var textUrl = `http://still-shelf-63211.herokuapp.com/http://www.esvapi.org/v2/rest/passageQuery?key=IP&passage=${this.passage}`
+      this.parsedPassage = parsePassage(this.passage)
+      console.log(this.parsedPassage)
+
+      var audioSrc = this.passage ? `http://audio.esvbible.org/hw/hq/${this.parsedPassage}.mp3` : null
+      var textUrl = `http://still-shelf-63211.herokuapp.com/http://www.esvapi.org/v2/rest/passageQuery?key=IP&passage=${this.parsedPassage}`
 
       $.ajax({
         url: textUrl,
         success: (data) => {
+          this.parsedPassage = ""
           this.passageHtml = data
           this.audioSrc = audioSrc
           this.loading = false

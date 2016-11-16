@@ -19,6 +19,12 @@ module.exports = {
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
 
-    "quotes": ["error", "double", { "allowTemplateLiterals": true }]
+    "quotes": ["error", "double", { "allowTemplateLiterals": true }],
+
+    "space-before-function-paren": ["error", "never"],
+
+    "no-multiple-empty-lines": ["error", { "max": 2, "maxEOF": 1 }],
+
+    "padded-blocks": 0
   }
 }

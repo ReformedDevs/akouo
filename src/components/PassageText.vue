@@ -7,7 +7,7 @@
 <script>
 import $ from "jquery"
 
-$.strRemove = function (theTarget, theString) {
+$.strRemove = function(theTarget, theString) {
   return $("<div/>").append(
     $(theTarget, theString).remove().end()
   ).html()
@@ -16,7 +16,7 @@ $.strRemove = function (theTarget, theString) {
 export default {
   props: ["passageHtml"],
   computed: {
-    formattedPassage () {
+    formattedPassage() {
       let html = this.passageHtml
 
       html = $.strRemove("object", html)
