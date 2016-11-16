@@ -33,7 +33,7 @@ export default {
       this.loadingText = true
 
       var audioSrc = this.passage ? `http://audio.esvbible.org/hw/hq/${this.passage}.mp3` : null
-      var textUrl = `http://www.esvapi.org/v2/rest/passageQuery?key=IP&passage=${this.passage}&output-format=crossway-xml-1.0`
+      var textUrl = `http://still-shelf-63211.herokuapp.com/http://www.esvapi.org/v2/rest/passageQuery?key=IP&passage=${this.passage}`
 
       $.ajax({
         url: textUrl,
