@@ -22,7 +22,7 @@ export default {
       html = $.strRemove("object", html)
       html = $.strRemove("div.footnotes", html)
       html = $.strRemove("span.footnote", html)
-      html = $.strRemove("span.verse-num", html)
+      // html = $.strRemove("span.verse-num", html)
 
       return html
     }
