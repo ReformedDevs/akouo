@@ -35,10 +35,11 @@ export default {
       this.loadingText = true
 
       this.parsedPassage = parsePassage(this.passage)
-      console.log(this.parsedPassage)
+
+      console.log("REQUESTING PASSAGE(S): ", this.parsedPassage)
 
       var audioSrc = this.passage ? `http://audio.esvbible.org/hw/hq/${this.parsedPassage}.mp3` : null
-      var textUrl = `http://still-shelf-63211.herokuapp.com/http://www.esvapi.org/v2/rest/passageQuery?key=IP&passage=${this.parsedPassage}`
+      var textUrl = `http://still-shelf-63211.herokuapp.com/http://www.esvapi.org/v2/rest/passageQuery?key=TEST&passage=${this.parsedPassage}`
 
       $.ajax({
         url: textUrl,
