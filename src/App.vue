@@ -1,9 +1,12 @@
 <template>
   <div id="app">
+    <p class="text-lg font-bold pb-4">
+      Example - Acts 18:19-28; Acts 19:1-41
+    <p>
     <form class="passage-form" @submit.prevent="getPassage">
       <input v-model="passage" type="text" name="passage" placeholder="Enter Your Reading For The Day"/>
     </form>
-    <div v-if="!loading">
+    <div v-if="!loading" class="mx-auto max-w-md text-xl">
       <passage-audio :src="audioSrc"></passage-audio>
       <passage-text :passageHtml="passageHtml"></passage-text>
     </div>
@@ -71,11 +74,20 @@ h2 {
   padding-top: 1em;
 }
 
+h3 {
+  padding-top: 1em;
+  padding-bottom: 0.5em;
+};
+
 h1,
 h2,
 strong {
   color: #333;
 }
+
+p {
+  padding: 0.5em 0;
+};
 
 a {
   color: #e81c4f;
@@ -92,6 +104,11 @@ a {
   display: flex;
   flex: 1;
 }
+
+.verse-num {
+  font-size: .875rem;
+  color: #e81c4f;
+};
 
 input[type="text"] {
   width: 100%;
