@@ -6,7 +6,7 @@
     <form class="passage-form" @submit.prevent="getPassage">
       <input v-model="passage" type="text" name="passage" placeholder="Enter Your Reading For The Day"/>
     </form>
-    <div v-if="!loading" class="mx-auto max-w-md text-xl">
+    <div v-if="!loading" class="mx-auto w-full max-w-md text-xl">
       <passage-audio :src="audioSrc"></passage-audio>
       <passage-text :passageHtml="passageHtml"></passage-text>
     </div>
@@ -107,6 +107,11 @@ a {
 
 .verse-num {
   font-size: .875rem;
+  color: #e81c4f;
+};
+
+
+.chapter-num {
   color: #e81c4f;
 };
 
