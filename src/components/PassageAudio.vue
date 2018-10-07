@@ -1,6 +1,6 @@
 <template>
   <div class="audio-container">
-    <audio id="audio" controls="controls">
+    <audio id="audio" class="w-full max-w-md" controls="controls">
       <source :src="src" type="audio/mp3">
     </audio>
   </div>

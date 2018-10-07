@@ -1,13 +1,13 @@
 <template>
-  <div id="app">
+  <div id="app" class="max-w-lg mx-auto pb-8">
     <p class="text-lg font-bold pb-4">
       Example - Acts 18:19-28; Acts 19:1-41
     <p>
     <form class="passage-form" @submit.prevent="getPassage">
       <input v-model="passage" type="text" name="passage" placeholder="Enter Your Reading For The Day"/>
     </form>
-    <div v-if="!loading" class="mx-auto max-w-md text-xl">
-      <passage-audio :src="audioSrc"></passage-audio>
+    <div v-if="!loading" class="mx-auto w-full max-w-md text-xl">
+      <passage-audio :src="audioSrc" class="w-full fixed pin-b pin-r pin-l"></passage-audio>
       <passage-text :passageHtml="passageHtml"></passage-text>
     </div>
   </div>
@@ -94,8 +94,6 @@ a {
 }
 
 #app {
-  width: 50em;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
 }
@@ -110,10 +108,14 @@ a {
   color: #e81c4f;
 };
 
+
+.chapter-num {
+  color: #e81c4f;
+};
+
 input[type="text"] {
   width: 100%;
   padding: 20px;
-  margin-bottom: 4em;
   text-align: center;
   border: 1px solid #566b78;
   border-radius: 5px;
