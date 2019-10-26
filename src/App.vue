@@ -1,13 +1,13 @@
 <template>
-  <div id="app" class="max-w-lg mx-auto pb-8">
+  <div id="app" class="max-w-xl mx-auto pb-8">
     <p class="text-lg font-bold pb-4">
       Example - Acts 18:19-28; Acts 19:1-41
     <p>
     <form class="passage-form" @submit.prevent="getPassage">
       <input v-model="passage" type="text" name="passage" placeholder="Enter Your Reading For The Day"/>
     </form>
-    <div v-if="!loading" class="mx-auto w-full max-w-md text-xl">
-      <passage-audio :src="audioSrc" class="w-full fixed pin-b pin-r pin-l"></passage-audio>
+    <div v-if="!loading" class="w-full max-w-xl text-xl mt-4">
+      <passage-audio :src="audioSrc" class="w-full"></passage-audio>
       <passage-text :passageHtml="passageHtml"></passage-text>
     </div>
   </div>
